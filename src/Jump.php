@@ -2,8 +2,8 @@
 /**
  * @Author: Maowenfu
  * @Date:   2020-12-05 15:49:57
- * @Last Modified by:   admin
- * @Last Modified time: 2020-12-07 09:35:45
+ * @Last Modified by:   maowenfu
+ * @Last Modified time: 2020-12-07 13:41:42
  */
 namespace maowenfu\think;
 use think\exception\HttpResponseException;
@@ -46,6 +46,8 @@ trait Jump
      */
     protected function success($msg = '', string $url = null, $data = '', int $wait = 3, array $header = [])
     {
+        $View = new \think\facade\View();
+        $View::config(['layout_on' => false]);
         if (is_null($url) && isset($_SERVER["HTTP_REFERER"])) {
             $url = $_SERVER["HTTP_REFERER"];
         } elseif ($url) {
@@ -84,6 +86,8 @@ trait Jump
      */
     protected function error($msg = '', string $url = null, $data = '', int $wait = 3, array $header = [])
     {
+        $View = new \think\facade\View();
+        $View::config(['layout_on' => false]);
         if (is_null($url)) {
             $url = $this->request->isAjax() ? '' : 'javascript:history.back(-1);';
         } elseif ($url) {

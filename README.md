@@ -1,11 +1,11 @@
-# thinkphp-jump
+# think-jump
 
 适用于thinkphp6.0的跳转扩展
 
 ## 安装
 
 ~~~php
-composer require maowenfu/thinkphp-jump
+composer require maowenfu/think-jump
 ~~~
 
 ## 配置
@@ -13,8 +13,8 @@ composer require maowenfu/thinkphp-jump
 // 安装之后会在config目录里生成jump.php配置文件
 return[
     // 默认跳转页面对应的模板文件
-    'dispatch_success_tmpl' => app()->getRootPath().'/vendor/maowenfu/thinkphp-jump/src/tpl/dispatch_jump.tpl',
-    'dispatch_error_tmpl'   => app()->getRootPath().'/vendor/maowenfu/thinkphp-jump/src/tpl/dispatch_jump.tpl',
+    'dispatch_success_tmpl' => app()->getRootPath().'/vendor/maowenfu/think-jump/src/tpl/dispatch_jump.tpl',
+    'dispatch_error_tmpl'   => app()->getRootPath().'/vendor/maowenfu/think-jump/src/tpl/dispatch_jump.tpl',
 ];
 ~~~
 
